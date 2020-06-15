@@ -52,5 +52,5 @@ app.delete("/api/list/delete/:id", (req, res) => {
 });
 
 app.listen(PORT, () =>
-  console.log(`FS app backend app is running on port ${PORT}`)
+  console.log(`FS backend app is running on port ${PORT}`)
 );
