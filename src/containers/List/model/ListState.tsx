@@ -1,5 +1,5 @@
 export interface ListItem {
-  id: number;
+  id: string;
   text: string;
   isCompleted: boolean;
   category: string;
@@ -7,5 +7,6 @@ export interface ListItem {
 
 export interface ListState {
   isLoading: boolean;
+  isSorted: boolean;
   data: ListItem[];
 }

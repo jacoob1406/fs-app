@@ -1,9 +1,10 @@
-import { ListState } from "./model/ListState";
-import { ListAction } from "./model/ListAction";
-import { ListActionNames } from "./model/ListActionNames";
+import { ListState } from './model/ListState';
+import { ListAction } from './model/ListAction';
+import { ListActionNames } from './model/ListActionNames';
 
 const initialState: ListState = {
   isLoading: false,
+  isSorted: false,
   data: [],
 };
 
@@ -29,6 +30,12 @@ export default (
       return {
         ...state,
         isLoading: false,
+      };
+    }
+    case ListActionNames.SORT: {
+      return {
+        ...state,
+        isSorted: action.isSorted,
       };
     }
     default:

@@ -4,5 +4,6 @@ import { ListItem } from './ListState';
 export interface ListAction {
   type: ListActionNames;
   payload: ListItem[];
-//   error?: AppError
+  isSorted: boolean;
+  //   error?: AppError
 }

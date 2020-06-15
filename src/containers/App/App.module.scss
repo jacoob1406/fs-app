@@ -2,12 +2,20 @@
   text-align: center;
   background-color: #f5f5f5;
   min-height: 100vh;
+  padding-bottom: 30px;
 
-  .appFooter {
-    position: absolute;
-    bottom: 5px;
+  &__header {
+    padding: 2rem;
+    color: #ffc703;
+  }
+
+  &__footer {
+    background-color: #ffc703;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     text-align: center;
     font-size: 0.5rem;
+    padding: 3px 0;
   }
 }
