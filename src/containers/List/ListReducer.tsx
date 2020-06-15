@@ -1,11 +1,13 @@
 import { ListState } from './model/ListState';
 import { ListAction } from './model/ListAction';
 import { ListActionNames } from './model/ListActionNames';
+import { AppError } from '../../common/model/AppError';
 
 const initialState: ListState = {
   isLoading: false,
   isSorted: false,
   data: [],
+  error: null as any,
 };
 
 export default (
@@ -30,6 +32,7 @@ export default (
       return {
         ...state,
         isLoading: false,
+        error: action.error as AppError,
       };
     }
     case ListActionNames.SORT: {

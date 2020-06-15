@@ -17,7 +17,7 @@ function* addNewItemWorkerSaga(action: any): SagaIterator {
   } catch (error) {
     yield put({
       type: AddNewItemActionNames.ADD_ERROR,
-      message: error.message,
+      error,
     });
   }
 }

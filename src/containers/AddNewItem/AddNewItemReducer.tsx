@@ -1,9 +1,11 @@
 import { AddNewItemState } from './model/AddNewItemState';
 import { AddNewItemAction } from './model/AddNewItemAction';
 import { AddNewItemActionNames } from './model/AddNewItemActionNames';
+import { AppError } from '../../common/model/AppError';
 
 const initialState: AddNewItemState = {
   isLoading: false,
+  error: null as any,
 };
 
 export default (
@@ -27,7 +29,7 @@ export default (
       return {
         ...state,
         isLoading: false,
-        error: action.error,
+        error: action.error as AppError,
       };
     }
     default:

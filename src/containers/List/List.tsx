@@ -6,16 +6,22 @@ import {
   selectListData,
   selectListIsLoading,
   selectListIsSorted,
+  selectListError,
 } from './ListSelectors';
 import { RootState } from '../../common/model/RootState';
 import ListComponent from '../../components/List/List';
 import { getListData, sortListData } from './ListActionCreators';
 import { deleteListItem } from '../DeleteItem/DeleteItemActionCreators';
+import LoaderIndicator from '../../components/Loader/Loader';
+import { compose } from 'redux';
+import withErrorHandler from '../../components/WithErrorHandler/WithErrorHandler';
+import { AppError } from '../../common/model/AppError';
 
 interface StateToProps {
   data: ListItem[];
   isLoading: boolean;
   isSorted: boolean;
+  error: AppError;
 }
 
 interface DispatchToProps {
@@ -34,12 +40,14 @@ class List extends Component<Props> {
   render() {
     const {
       data,
-      isLoading,
       deleteListItem,
       sortListData,
       isSorted,
+      isLoading,
     } = this.props;
-    console.log(isLoading);
+    if (isLoading) {
+      return <LoaderIndicator />;
+    }
     return (
       <ListComponent
         items={data}
@@ -55,6 +63,7 @@ const mapStateToProps = createStructuredSelector<RootState, StateToProps>({
   data: selectListData,
   isLoading: selectListIsLoading,
   isSorted: selectListIsSorted,
+  error: selectListError,
 });
 
 const mapDispatchToProps: DispatchToProps = {
@@ -63,4 +72,7 @@ const mapDispatchToProps: DispatchToProps = {
   sortListData,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default compose<typeof React.Component>(
+  connect(mapStateToProps, mapDispatchToProps),
+  withErrorHandler
+)(List);

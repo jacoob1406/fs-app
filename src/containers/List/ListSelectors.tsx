@@ -27,3 +27,8 @@ export const selectListIsSorted = createSelector(
   selectFromListReducer,
   (substate: ListState) => substate.isSorted
 );
+
+export const selectListError = createSelector(
+  selectFromListReducer,
+  (substate: ListState) => substate.error
+);

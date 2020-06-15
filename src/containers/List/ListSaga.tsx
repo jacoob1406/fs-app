@@ -11,7 +11,7 @@ function* fetchListDataWorkerSaga() {
     const response = yield call(getListData);
     yield put({ type: ListActionNames.FETCH_SUCCESS, payload: response.data });
   } catch (error) {
-    yield put({ type: ListActionNames.FETCH_ERROR, message: error.message });
+    yield put({ type: ListActionNames.FETCH_ERROR, error });
   }
 }
 
