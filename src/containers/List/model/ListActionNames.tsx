@@ -1,0 +1,5 @@
+export enum ListActionNames {
+  FETCH = 'LIST/FETCH',
+  FETCH_SUCCESS = 'LIST/FETCH_SUCCESS',
+  FETCH_ERROR = 'LIST/FETCH_ERROR',
+}
