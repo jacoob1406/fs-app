@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddNewItemForm component should match snapshot 1`] = `
+<div>
+  <section
+    class="addItemContainer"
+  >
+    <h2
+      class="addItemContainer__heading"
+    >
+      Add new item:
+    </h2>
+    <form
+      class="addItemContainer__form"
+    >
+      <div
+        class="addItemContainer__form--item"
+      >
+        <label>
+          Category:
+        </label>
+        <select>
+          <option
+            value="Career"
+          >
+            Career
+          </option>
+          <option
+            value="Family"
+          >
+            Family
+          </option>
+          <option
+            value="Travelling"
+          >
+            Travelling
+          </option>
+        </select>
+      </div>
+      <div
+        class="addItemContainer__form--item"
+      >
+        <label>
+          Text:
+        </label>
+        <input
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
+    <button
+      class="addItemContainer__button"
+      disabled=""
+    >
+      Add
+    </button>
+  </section>
+</div>
+`;

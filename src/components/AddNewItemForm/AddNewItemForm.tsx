@@ -1,17 +1,20 @@
 import React, { useState, FC } from 'react';
 import styles from './AddNewItemForm.module.scss';
 import { AddNewItemBody } from '../../containers/AddNewItem/model/AddNewItemAction';
+import { ListItemCategory } from '../../common/model/ListItemCategory';
 
 interface Props {
   handleSubmit(values: AddNewItemBody): void;
 }
 
 const AddNewItemForm: FC<Props> = ({ handleSubmit }: Props) => {
-  const [category, setCategory] = useState<string>('Career');
+  const [category, setCategory] = useState<ListItemCategory>(
+    ListItemCategory.CAREER
+  );
   const [description, setDescription] = useState<string>('');
 
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) =>
-    setCategory(event.currentTarget.value);
+    setCategory(event.currentTarget.value as ListItemCategory);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setDescription(event.currentTarget.value);
@@ -34,9 +37,11 @@ const AddNewItemForm: FC<Props> = ({ handleSubmit }: Props) => {
         <div className={styles['addItemContainer__form--item']}>
           <label>Category:</label>
           <select onChange={handleSelect} value={category}>
-            <option value='Career'>Career</option>
-            <option value='Family'>Family</option>
-            <option value='Travelling'>Travelling</option>
+            {Object.values(ListItemCategory).map((option: string) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
           </select>
         </div>
         <div className={styles['addItemContainer__form--item']}>

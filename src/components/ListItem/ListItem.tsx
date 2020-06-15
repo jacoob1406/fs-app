@@ -3,7 +3,7 @@ import styles from './ListItem.module.scss';
 import classNames from 'classnames';
 import DeleteItem from '../DeleteItem/DeleteItem';
 
-interface Props {
+export interface Props {
   isCompleted: boolean;
   isSelected: boolean;
   text: string;

@@ -24,7 +24,7 @@ export default (
     case ListActionNames.FETCH_SUCCESS: {
       return {
         ...state,
-        data: action.payload,
+        data: action.payload!,
         isLoading: false,
       };
     }
@@ -38,7 +38,7 @@ export default (
     case ListActionNames.SORT: {
       return {
         ...state,
-        isSorted: action.isSorted,
+        isSorted: action.isSorted!,
       };
     }
     default:

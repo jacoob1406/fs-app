@@ -1,10 +1,11 @@
 import { AppError } from '../../../common/model/AppError';
+import { ListItemCategory } from '../../../common/model/ListItemCategory';
 
 export interface ListItem {
   id: string;
   text: string;
   isCompleted: boolean;
-  category: string;
+  category: ListItemCategory;
 }
 
 export interface ListState {

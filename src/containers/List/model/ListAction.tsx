@@ -4,7 +4,7 @@ import { AppError } from '../../../common/model/AppError';
 
 export interface ListAction {
   type: ListActionNames;
-  payload: ListItem[];
-  isSorted: boolean;
+  payload?: ListItem[];
+  isSorted?: boolean;
   error?: AppError;
 }

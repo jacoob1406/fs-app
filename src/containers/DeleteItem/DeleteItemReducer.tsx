@@ -1,9 +1,11 @@
 import { DeleteItemState } from './model/DeleteItemState';
 import { DeleteItemAction } from './model/DeleteItemAction';
 import { DeleteItemActionNames } from './model/DeleteItemActionNames';
+import { AppError } from '../../common/model/AppError';
 
 const initialState: DeleteItemState = {
   isLoading: false,
+  error: null as any,
 };
 
 export default (
@@ -27,7 +29,7 @@ export default (
       return {
         ...state,
         isLoading: false,
-        error: action.error,
+        error: action.error as AppError,
       };
     }
     default:
