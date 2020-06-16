@@ -1,3 +1,5 @@
+@import '../../styles/colorPalette.scss';
+
 .completeBtn {
   border: none;
   font-size: 1.2rem;
@@ -7,7 +9,7 @@
   padding: 2px 5px;
 
   &:hover {
-    color: #ffc703;
+    color: $mainHighlight;
   }
   &:focus {
     outline: none;

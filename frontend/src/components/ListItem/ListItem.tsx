@@ -24,7 +24,7 @@ const ListItem = ({
   isSelected,
   category,
 }: Props) => {
-  const onItemSelect = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const onItemSelect = () => {
     if (isCompleted) {
       return;
     }

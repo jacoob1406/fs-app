@@ -1,3 +1,5 @@
+@import '../../styles/colorPalette.scss';
+
 .sortSwitchContainer {
   display: flex;
   align-items: center;
@@ -25,7 +27,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: $disabledIndicator;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -43,11 +45,11 @@
   }
 
   input:checked + .slider {
-    background-color: #ffc703;
+    background-color: $mainHighlight;
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 1px #ffc703;
+    box-shadow: 0 0 1px $mainHighlight;
   }
 
   input:checked + .slider:before {

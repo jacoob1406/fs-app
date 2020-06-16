@@ -1,15 +1,17 @@
+@import '../../styles/colorPalette.scss';
+
 .appContainer {
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: $mainBackground;
   min-height: 100vh;
 
   &__header {
     padding: 2rem;
-    color: #ffc703;
+    color: $mainHighlight;
   }
 
   &__footer {
-    background-color: #ffc703;
+    background-color: $mainHighlight;
     position: fixed;
     bottom: 0;
     width: 100%;

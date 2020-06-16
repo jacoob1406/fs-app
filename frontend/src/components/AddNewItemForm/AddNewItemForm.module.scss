@@ -1,3 +1,5 @@
+@import '../../styles/colorPalette.scss';
+
 .addItemContainer {
   display: flex;
   justify-content: center;
@@ -31,7 +33,7 @@
   &__button {
     border: none;
     font-size: 1.2rem;
-    background: #ffc703;
+    background: $mainHighlight;
     cursor: pointer;
     border-radius: 3px;
     padding: 2px 15px;
@@ -40,12 +42,14 @@
     &:hover {
       color: #ffffff;
     }
+
     &:focus {
       outline: none;
     }
+
     &:disabled {
-      background: #585858;
-      color: #ffffff;
+      background: $disabledIndicator;
+      color: #000;
       cursor: not-allowed;
     }
   }

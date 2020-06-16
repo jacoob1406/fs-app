@@ -1,3 +1,5 @@
+@import '../../styles/colorPalette.scss';
+
 .listItem {
   display: flex;
   align-items: center;
@@ -13,16 +15,16 @@
   }
 
   &--completed {
-    background-color: #e5e5e5;
+    background-color: $disabledIndicator;
     cursor: not-allowed;
   }
 
   &--selected {
-    background-color: #ffc703;
+    background-color: $mainHighlight;
   }
 
   &__index {
-    color: #ffc703;
+    color: $mainHighlight;
     font-size: 2rem;
     font-weight: bold;
     transform: skew(-20deg, 0deg);
@@ -54,8 +56,9 @@
     padding: 2px 5px;
 
     &:hover {
-      color: #ffc703;
+      color: $mainHighlight;
     }
+
     &:focus {
       outline: none;
     }

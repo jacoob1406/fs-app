@@ -7,14 +7,11 @@ interface Props {
 }
 
 const DeleteItem: FC<Props> = ({ onDelete, id }: Props) => {
-  const onDeleteClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    const id: string = event.currentTarget.dataset.id || '';
+  const onDeleteClick = () => {
     onDelete(id);
   };
   return (
-    <button className={styles.deleteBtn} data-id={id} onClick={onDeleteClick}>
+    <button className={styles.deleteBtn} onClick={onDeleteClick}>
       <i className='fa fa-trash' aria-hidden />
     </button>
   );

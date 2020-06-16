@@ -2,12 +2,13 @@ import React, { useState, FC } from 'react';
 import ListItem from '../ListItem/ListItem';
 import styles from './List.module.scss';
 import SortSwitch from '../SortSwitch/SortSwitch';
+import { ListItemCategory } from '../../common/model/ListItemCategory';
 
 interface Item {
   id: string;
   text: string;
   isCompleted: boolean;
-  category: string;
+  category: ListItemCategory;
 }
 interface Props {
   items: Item[];
@@ -19,8 +20,10 @@ interface Props {
 const List: FC<Props> = ({ items, onDelete, sortItems, isSorted }: Props) => {
   const [currentId, setCurrentId] = useState('');
 
-  if (items.length === 0) {
-    return <p>NO ITEMS</p>;
+  if (items?.length === 0) {
+    return (
+      <section className={styles['listContainer--empty']}>NO ITEMS</section>
+    );
   }
   return (
     <section className={styles.listContainer}>

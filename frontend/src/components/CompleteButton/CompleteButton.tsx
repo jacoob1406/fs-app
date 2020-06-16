@@ -7,12 +7,11 @@ interface Props {
 }
 
 const CompleteButton: FC<Props> = ({ onDelete, id }: Props) => {
-  const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const id: string = event.currentTarget.dataset.id || '';
+  const onClick = () => {
     onDelete(id);
   };
   return (
-    <button className={styles.completeBtn} data-id={id} onClick={onClick}>
+    <button className={styles.completeBtn} onClick={onClick}>
       Complete
     </button>
   );
